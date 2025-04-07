@@ -15,7 +15,7 @@ public class Justificacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "fecha_ini", nullable = false)
     @NotNull(message = "La fecha de inicio no puede ser nula")

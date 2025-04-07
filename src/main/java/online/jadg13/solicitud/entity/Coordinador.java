@@ -3,12 +3,11 @@ package online.jadg13.solicitud.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "coordinadores")
@@ -16,7 +15,7 @@ import java.util.List;
 public class Coordinador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "nombre", nullable = false, length = 50)
     @NotBlank(message = "El nombre no puede estar vacío")
@@ -35,6 +34,7 @@ public class Coordinador {
     private String email;
 
     @Column(name = "telefono", nullable = true, length = 50)
+    @Size(max = 50, message = "El teléfono no puede exceder 50 caracteres")
     private String telefono;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
