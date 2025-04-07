@@ -7,7 +7,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity @Table(name = "carreras")
-@Getter @Setter
+@Getter
+@Setter
+@ToString
 public class Carrera {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,12 +22,6 @@ public class Carrera {
     @Column(name = "descripcion", nullable = false, length = 250)
     private String descripcion;
 
-    public String toString() {
-        return "{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                '}';
-    }
+
 
 }

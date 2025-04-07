@@ -39,6 +39,5 @@ public class Coordinador {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "carrera_id", unique = true)
-    @ToString.Exclude
     private Carrera carrera;
 }

@@ -22,7 +22,8 @@ public class CarreraService {
     }
 
     public Carrera findById(Long id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Carrera no encontrada con id: " + id));
     }
 
     public Carrera update(Carrera carrera) {
@@ -32,5 +33,6 @@ public class CarreraService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
 
 }

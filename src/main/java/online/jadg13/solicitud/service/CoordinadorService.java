@@ -23,8 +23,8 @@ public class CoordinadorService {
         return repository.findAll();
     }
 
-    public Optional<Coordinador> findById(Long id) {
-        return repository.findById(id);
+    public Coordinador findById(Long id) {
+        return repository.findById(id).get();
     }
 
     public Coordinador update(Coordinador coordinador) {
@@ -34,6 +34,8 @@ public class CoordinadorService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+
 
 
 }
